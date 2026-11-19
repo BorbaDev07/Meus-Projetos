@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Europa Store | Moda Masculina Europeia</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Europa Store - Moda masculina com elegância europeia, exclusividade e preço justo. Camisetas, shorts e bonés de alto padrão.">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#080D1B',
+            brandNavyLight: '#0E162A',
+            brandRoyal: '#263F86',
+            brandChampagne: '#E8DDC8',
+            brandOffWhite: '#F2F0EB',
+            brandGrayBlue: '#8492B5',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles & Animations -->
+  <style>
+    /* Estilos de base e variáveis */
+    :root {
+      --bg-dark: #080D1B;
+      --bg-card: #0E162A;
+      --accent-champagne: #E8DDC8;
+      --accent-royal: #263F86;
+      --text-main: #F2F0EB;
+      --text-muted: #8492B5;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-editorial {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080D1B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #263F86;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #E8DDC8;
+    }
+
+    /* Efeito de Vidro (Glassmorphism) */
+    .glass-panel {
+      background: rgba(14, 22, 42, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(232, 221, 200, 0.12);
+    }
+    
+    .glass-nav {
+      background: rgba(8, 13, 27, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(232, 221, 200, 0.1);
+    }
+
+    /* Animações e Transições */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-up.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card-hover {
+      transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232, 221, 200, 0.4);
+      box-shadow: 0 16px 32px -8px rgba(38, 63, 134, 0.25);
+    }
+
+    /* Animação de adicão ao carrinho */
+    @keyframes pulseSuccess {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); border-color: #E8DDC8; }
+      100% { transform: scale(1); }
+    }
+    
+    .added-pulse {
+      animation: pulseSuccess 0.5s ease-in-out;
+    }
+
+    /* Suporte a preferência de movimento reduzido */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .card-hover:hover {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brandRoyal selection:text-brandChampagne">
+
+  <!-- ==================== HEADER / NAV ==================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo da Marca -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brandChampagne rounded-md p-1" aria-label="Europa Store Home">
+        <!-- SVG Monograma Emblemático Europa Store -->
+        <div class="w-10 h-10 border border-brandChampagne/40 rounded-full flex items-center justify-center transition-colors group-hover:border-brandChampagne group-hover:bg-brandRoyal/20">
+          <svg width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-brandChampagne">
+            <path d="M20 25H75M20 50H65M20 75H80" stroke="#E8DDC8" stroke-width="8" stroke-linecap="round"/>
+            <path d="M20 25V75" stroke="#E8DDC8" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="82" cy="25" r="4" fill="#263F86"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-editorial text-2xl font-bold tracking-widest text-brandChampagne uppercase leading-none">EUROPA</span>
+          <span class="text-[9px] tracking-[0.35em] text-brandGrayBlue uppercase font-medium mt-1">STORE · EST. 2024</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+        <a href="#categorias" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">COLEÇÕES</a>
+        <a href="#camisetas-section" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">CAMISETAS</a>
+        <a href="#shorts-section" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">SHORTS</a>
+        <a href="#bones-section" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">BONÉS</a>
+        <a href="#sobre" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">SOBRE</a>
+        <a href="#diferenciais" class="text-brandOffWhite/80 hover:text-brandChampagne transition-colors py-2">DIFERENCIAIS</a>
+      </nav>
+
+      <!-- Botão do Carrinho Desktop & Mobile Menu Trigger -->
+      <div class="flex items-center gap-4">
+        <button id="open-cart-btn" class="relative bg-brandNavyLight border border-brandChampagne/30 text-brandOffWhite px-4 py-2.5 rounded-full flex items-center gap-2 hover:border-brandChampagne hover:bg-brandRoyal/30 transition-all focus:outline-none focus:ring-2 focus:ring-brandChampagne" aria-label="Abrir pedido">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brandChampagne" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="text-xs uppercase tracking-wider font-semibold hidden sm:inline">SEU PEDIDO</span>
+          <span id="cart-counter" class="bg-brandRoyal text-brandChampagne text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center border border-brandChampagne/50">0</span>
+        </button>
+
+        <!-- Botão Menu Mobile -->
+        <button id="mobile-menu-btn" class="md:hidden text-brandOffWhite p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandChampagne" aria-label="Menu Principal">
+          <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-brandChampagne/10 px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col space-y-4 text-base font-medium">
+        <a href="#categorias" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2 border-b border-white/5">COLEÇÕES</a>
+        <a href="#camisetas-section" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2 border-b border-white/5">CAMISETAS</a>
+        <a href="#shorts-section" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2 border-b border-white/5">SHORTS</a>
+        <a href="#bones-section" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2 border-b border-white/5">BONÉS</a>
+        <a href="#sobre" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2 border-b border-white/5">SOBRE A LOJA</a>
+        <a href="#diferenciais" class="mobile-nav-link text-brandOffWhite hover:text-brandChampagne py-2">DIFERENCIAIS</a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ==================== SEÇÃO 01 — HERO ==================== -->
+  <section class="relative min-h-screen pt-28 pb-16 md:pt-36 md:pb-24 flex items-center overflow-hidden">
+    <!-- Luz de Fundo e Gradiente Decorativo -->
+    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-brandRoyal/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-brandChampagne/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Conteúdo Textual Hero -->
+        <div class="lg:col-span-7 space-y-6 lg:pr-6 fade-up">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brandChampagne/25 bg-brandNavyLight/60">
+            <span class="w-2 h-2 rounded-full bg-brandChampagne"></span>
+            <span class="text-xs uppercase tracking-widest text-brandGrayBlue font-medium">Coleção Masculina 2025</span>
+          </div>
+
+          <h1 class="font-editorial text-4xl sm:text-6xl xl:text-7xl font-bold tracking-tight text-brandOffWhite leading-[1.1]">
+            Vista sua essência. <br>
+            <span class="text-brandChampagne italic font-normal">Expresse seu estilo.</span>
+          </h1>
+
+          <p class="text-brandGrayBlue text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+            Peças exclusivas desenvolvidas sob o conceito de quiet luxury. Uma curadoria impecável de camisetas, shorts e bonés com caimento sob medida, tecidos nobres e sofisticação atemporal.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="#vitrine" class="inline-flex items-center justify-center px-8 py-4 bg-brandRoyal hover:bg-brandRoyal/80 text-brandOffWhite font-semibold text-sm tracking-wider uppercase rounded-full transition-all duration-300 shadow-lg shadow-brandRoyal/25 border border-brandChampagne/20 hover:border-brandChampagne group">
+              <span>EXPLORAR COLEÇÃO</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            
+            <a href="#sobre" class="inline-flex items-center justify-center px-6 py-4 bg-transparent text-brandChampagne hover:text-brandOffWhite text-sm tracking-wider uppercase font-medium transition-colors border border-brandChampagne/20 hover:border-brandChampagne/50 rounded-full">
+              CONHEÇA A EUROPA STORE
+            </a>
+          </div>
+
+          <!-- Métricas sutis -->
+          <div class="pt-8 grid grid-cols-3 gap-6 border-t border-brandGrayBlue/15">
+            <div>
+              <p class="font-editorial text-2xl sm:text-3xl font-bold text-brandChampagne">100%</p>
+              <p class="text-xs text-brandGrayBlue uppercase tracking-wider mt-1">Algodão Nobre</p>
+            </div>
+            <div>
+              <p class="font-editorial text-2xl sm:text-3xl font-bold text-brandChampagne">Premium</p>
+              <p class="text-xs text-brandGrayBlue uppercase tracking-wider mt-1">Acabamento</p>
+            </div>
+            <div>
+              <p class="font-editorial text-2xl sm:text-3xl font-bold text-brandChampagne">Brasil</p>
+              <p class="text-xs text-brandGrayBlue uppercase tracking-wider mt-1">Envio Seguro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Banner Image -->
+        <div class="lg:col-span-5 fade-up" style="transition-delay: 200ms;">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Moldura Decorativa -->
+            <div class="absolute -inset-3 rounded-2xl border border-brandChampagne/25 rotate-2 pointer-events-none"></div>
+            
+            <div class="relative rounded-xl overflow-hidden shadow-2xl bg-brandNavyLight aspect-[3/4]">
+              <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Moda Masculina Europa Store Editorial" 
+                   class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                   loading="eager">
+              <div class="absolute inset-0 bg-gradient-to-t from-brandNavy via-transparent to-transparent opacity-60"></div>
+              
+              <div class="absolute bottom-6 left-6 right-6 p-4 glass-panel rounded-lg">
+                <p class="text-xs text-brandChampagne uppercase tracking-widest font-semibold">Edição Europeia</p>
+                <p class="font-editorial text-lg text-brandOffWhite font-normal mt-0.5">Elegância minimalista para o dia a dia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SEÇÃO 02 — CATEGORIAS ==================== -->
+  <section id="categorias" class="py-20 border-t border-brandGrayBlue/10 bg-brandNavy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+        <span class="text-xs font-semibold tracking-widest text-brandGrayBlue uppercase">CURATORIA EXCLUSIVA</span>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-brandChampagne mt-2">Nossas Categorias</h2>
+        <div class="w-12 h-0.5 bg-brandChampagne mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Categoria 1: Camisetas -->
+        <a href="#camisetas-section" class="group relative rounded-xl overflow-hidden bg-brandNavyLight border border-brandChampagne/15 card-hover block fade-up">
+          <div class="aspect-[4/5] w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80" 
+                 alt="Camisetas Masculinas Premium" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-brandNavy via-brandNavy/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+            <span class="font-editorial text-brandChampagne/80 text-xl font-medium">01</span>
+            <h3 class="font-editorial text-2xl font-bold text-brandOffWhite mt-1 group-hover:text-brandChampagne transition-colors">CAMISETAS</h3>
+            <p class="text-xs text-brandGrayBlue mt-2 font-normal">Cortes alfaiataria, tecidos nobres e caimento fluido.</p>
+            
+            <div class="mt-4 flex items-center text-xs text-brandChampagne font-semibold uppercase tracking-wider gap-2">
+              <span>VER PEÇAS</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Categoria 2: Shorts -->
+        <a href="#shorts-section" class="group relative rounded-xl overflow-hidden bg-brandNavyLight border border-brandChampagne/15 card-hover block fade-up" style="transition-delay: 150ms;">
+          <div class="aspect-[4/5] w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=800&q=80" 
+                 alt="Shorts Masculinos Resort" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-brandNavy via-brandNavy/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+            <span class="font-editorial text-brandChampagne/80 text-xl font-medium">02</span>
+            <h3 class="font-editorial text-2xl font-bold text-brandOffWhite mt-1 group-hover:text-brandChampagne transition-colors">SHORTS</h3>
+            <p class="text-xs text-brandGrayBlue mt-2 font-normal">Estilo resort, linho, alfaiataria casual e versatilidade.</p>
+            
+            <div class="mt-4 flex items-center text-xs text-brandChampagne font-semibold uppercase tracking-wider gap-2">
+              <span>VER PEÇAS</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Categoria 3: Bonés -->
+        <a href="#bones-section" class="group relative rounded-xl overflow-hidden bg-brandNavyLight border border-brandChampagne/15 card-hover block fade-up" style="transition-delay: 300ms;">
+          <div class="aspect-[4/5] w-full overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" 
+                 alt="Bonés Masculinos Exclusivos" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-brandNavy via-brandNavy/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end">
+            <span class="font-editorial text-brandChampagne/80 text-xl font-medium">03</span>
+            <h3 class="font-editorial text-2xl font-bold text-brandOffWhite mt-1 group-hover:text-brandChampagne transition-colors">BONÉS</h3>
+            <p class="text-xs text-brandGrayBlue mt-2 font-normal">Design contemporâneo, acabamento metálico e presença.</p>
+            
+            <div class="mt-4 flex items-center text-xs text-brandChampagne font-semibold uppercase tracking-wider gap-2">
+              <span>VER PEÇAS</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SEÇÃO 03 — VITRINE DE PRODUTOS ==================== -->
+  <section id="vitrine" class="py-24 bg-brandNavyLight/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 fade-up">
+        <div>
+          <span class="text-xs font-semibold tracking-widest text-brandGrayBlue uppercase">CATÁLOGO EXCLUSIVO</span>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-brandChampagne mt-2">Vitrine de Produtos</h2>
+        </div>
+        
+        <!-- Abas de Filtro Rápido da Vitrine -->
+        <div class="flex flex-wrap items-center gap-2 mt-6 md:mt-0" id="filter-tabs">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brandRoyal text-brandChampagne border border-brandChampagne/40">TODOS</button>
+          <button data-filter="camisetas" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brandNavy text-brandGrayBlue hover:text-brandOffWhite border border-brandChampagne/10">CAMISETAS</button>
+          <button data-filter="shorts" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brandNavy text-brandGrayBlue hover:text-brandOffWhite border border-brandChampagne/10">SHORTS</button>
+          <button data-filter="bones" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-all bg-brandNavy text-brandGrayBlue hover:text-brandOffWhite border border-brandChampagne/10">BONÉS</button>
+        </div>
+      </div>
+
+      <!-- BLOCO CAMISETAS -->
+      <div id="camisetas-section" class="mb-20 showcase-group fade-up">
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-editorial text-2xl font-bold text-brandOffWhite tracking-wide">CAMISETAS</h3>
+          <div class="h-px bg-brandGrayBlue/20 flex-1"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="container-camisetas">
+          <!-- Renderizado via JavaScript -->
+        </div>
+      </div>
+
+      <!-- BLOCO SHORTS -->
+      <div id="shorts-section" class="mb-20 showcase-group fade-up">
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-editorial text-2xl font-bold text-brandOffWhite tracking-wide">SHORTS</h3>
+          <div class="h-px bg-brandGrayBlue/20 flex-1"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="container-shorts">
+          <!-- Renderizado via JavaScript -->
+        </div>
+      </div>
+
+      <!-- BLOCO BONÉS -->
+      <div id="bones-section" class="mb-12 showcase-group fade-up">
+        <div class="flex items-center gap-4 mb-8">
+          <h3 class="font-editorial text-2xl font-bold text-brandOffWhite tracking-wide">BONÉS</h3>
+          <div class="h-px bg-brandGrayBlue/20 flex-1"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="container-bones">
+          <!-- Renderizado via JavaScript -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==================== SEÇÃO 06 — SOBRE A EUROPA STORE ==================== -->
+  <section id="sobre" class="py-24 bg-brandNavy relative overflow-hidden border-t border-brandGrayBlue/10">
+    <!-- Elementos decorativos -->
+    <div class="absolute -right-24 top-1/2 -translate-y-1/2 w-80 h-80 bg-brandRoyal/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Imagem Editorial Institucional -->
+        <div class="lg:col-span-5 fade-up">
+          <div class="relative">
+            <div class="aspect-[3/4] rounded-xl overflow-hidden border border-brandChampagne/20 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Essência Europa Store" 
+                   class="w-full h-full object-cover">
+            </div>
+            <div class="absolute -bottom-6 -right-6 p-6 glass-panel rounded-xl hidden sm:block">
+              <span class="font-editorial text-3xl font-bold text-brandChampagne block">QUIET LUXURY</span>
+              <span class="text-xs text-brandGrayBlue uppercase tracking-widest">Conceito Europeu</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Texto Oficial da Marca -->
+        <div class="lg:col-span-7 space-y-6 fade-up" style="transition-delay: 150ms;">
+          <span class="text-xs font-semibold tracking-widest text-brandGrayBlue uppercase">NOSSA HISTÓRIA</span>
+          <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-brandChampagne">Sobre a Europa Store</h2>
+          
+          <div class="w-16 h-0.5 bg-brandChampagne my-4"></div>
+
+          <div class="space-y-4 text-brandOffWhite/90 text-base sm:text-lg leading-relaxed font-normal">
+            <p>
+              A Europa Store nasceu com um propósito: trazer um novo conceito de moda masculina.
+            </p>
+            <p>
+              Uma proposta que une elegância, qualidade, exclusividade e preço justo, para homens que gostam de se vestir bem e valorizar seu estilo.
+            </p>
+            <p>
+              Selecionamos peças com personalidade e qualidade, buscando sempre entregar uma experiência diferenciada, sem abrir mão de preços que fazem sentido.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-brandGrayBlue/20 flex items-center justify-between">
+            <div class="font-editorial text-2xl font-bold text-brandChampagne italic">
+              “Europa Store. Seu estilo, nossa essência.”
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SEÇÃO 07 — DIFERENCIAIS ==================== -->
+  <section id="diferenciais" class="py-20 bg-brandNavyLight/60 border-t border-b border-brandGrayBlue/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+        <span class="text-xs font-semibold tracking-widest text-brandGrayBlue uppercase">POR QUE ESCOLHER A EUROPA STORE</span>
+        <h2 class="font-editorial text-3xl sm:text-5xl font-bold text-brandChampagne mt-2">Nossos Diferenciais</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        
+        <!-- Diferencial 1 -->
+        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center space-y-4 card-hover fade-up">
+          <div class="w-14 h-14 rounded-full bg-brandNavy border border-brandChampagne/30 flex items-center justify-center text-brandChampagne">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h4 class="font-editorial text-lg font-bold text-brandOffWhite">Qualidade em cada detalhe</h4>
+          <p class="text-xs text-brandGrayBlue">Costuras reforçadas e tecidos selecionados.</p>
+        </div>
+
+        <!-- Diferencial 2 -->
+        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center space-y-4 card-hover fade-up" style="transition-delay: 100ms;">
+          <div class="w-14 h-14 rounded-full bg-brandNavy border border-brandChampagne/30 flex items-center justify-center text-brandChampagne">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h4 class="font-editorial text-lg font-bold text-brandOffWhite">Exclusividade</h4>
+          <p class="text-xs text-brandGrayBlue">Lotes limitados com peças de alto padrão.</p>
+        </div>
+
+        <!-- Diferencial 3 -->
+        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center space-y-4 card-hover fade-up" style="transition-delay: 200ms;">
+          <div class="w-14 h-14 rounded-full bg-brandNavy border border-brandChampagne/30 flex items-center justify-center text-brandChampagne">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="font-editorial text-lg font-bold text-brandOffWhite">Estilo Versátil</h4>
+          <p class="text-xs text-brandGrayBlue">Combinações perfeitas para qualquer ocasião.</p>
+        </div>
+
+        <!-- Diferencial 4 -->
+        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center space-y-4 card-hover fade-up" style="transition-delay: 300ms;">
+          <div class="w-14 h-14 rounded-full bg-brandNavy border border-brandChampagne/30 flex items-center justify-center text-brandChampagne">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="font-editorial text-lg font-bold text-brandOffWhite">Preço Justo</h4>
+          <p class="text-xs text-brandGrayBlue">Sofisticação sem margens abusivas.</p>
+        </div>
+
+        <!-- Diferencial 5 -->
+        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center space-y-4 card-hover fade-up" style="transition-delay: 400ms;">
+          <div class="w-14 h-14 rounded-full bg-brandNavy border border-brandChampagne/30 flex items-center justify-center text-brandChampagne">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <h4 class="font-editorial text-lg font-bold text-brandOffWhite">Envio para Todo o Brasil</h4>
+          <p class="text-xs text-brandGrayBlue">Entregas rápidas e rastreadas com cuidado.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== SEÇÃO 04 & 05 — EXPERIÊNCIA DE COMPRA (CARRINHO LATERAL) ==================== -->
+  
+  <!-- Backdrop do Carrinho -->
+  <div id="cart-backdrop" class="fixed inset-0 bg-brandNavy/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- Drawer Lateral do Carrinho -->
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-brandNavyLight border-l border-brandChampagne/20 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl" aria-label="Painel de Pedido">
+    
+    <!-- Cabeçalho do Drawer -->
+    <div class="p-6 border-b border-brandGrayBlue/20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brandChampagne" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <h3 class="font-editorial text-2xl font-bold text-brandChampagne">Seu Pedido</h3>
+      </div>
+      
+      <button id="close-cart-btn" class="text-brandGrayBlue hover:text-brandOffWhite p-2 rounded-lg transition-colors focus:outline-none" aria-label="Fechar carrinho">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Lista de Itens no Carrinho -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-brandGrayBlue/10">
+      <!-- Inserido dinamicamente via JS -->
+    </div>
+
+    <!-- Rodapé do Drawer com Resumo e Botão WhatsApp -->
+    <div class="p-6 border-t border-brandGrayBlue/20 bg-brandNavy/90 space-y-4">
+      <div class="flex justify-between items-center text-sm text-brandGrayBlue">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-text" class="font-semibold text-brandOffWhite">R$ 0,00</span>
+      </div>
+      
+      <div class="flex justify-between items-center text-lg font-bold">
+        <span class="font-editorial text-brandChampagne">TOTAL DO PEDIDO</span>
+        <span id="cart-total-text" class="font-editorial text-2xl text-brandChampagne">R$ 0,00</span>
+      </div>
+
+      <p class="text-[11px] text-brandGrayBlue text-center">
+        Envios calculados na confirmação via WhatsApp. Peças selecionadas à mão.
+      </p>
+
+      <button id="checkout-whatsapp-btn" class="w-full py-4 bg-brandRoyal hover:bg-brandRoyal/80 text-brandOffWhite font-semibold text-sm tracking-wider uppercase rounded-full transition-all flex items-center justify-center gap-3 shadow-lg border border-brandChampagne/30 hover:border-brandChampagne focus:outline-none">
+        <!-- Ícone WhatsApp -->
+        <svg class="w-5 h-5 fill-current text-brandChampagne" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>FINALIZAR PEDIDO PELO WHATSAPP</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Botão Flutuante de Carrinho para Mobile -->
+  <button id="floating-cart-btn" class="sm:hidden fixed bottom-6 right-6 z-30 bg-brandRoyal text-brandChampagne p-4 rounded-full shadow-2xl border border-brandChampagne/40 flex items-center justify-center hover:scale-105 transition-transform" aria-label="Abrir pedido flutuante">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+    <span id="floating-cart-counter" class="absolute -top-1 -right-1 bg-brandChampagne text-brandNavy font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center border border-brandNavy">0</span>
+  </button>
+
+
+  <!-- Modal / Banner de Aviso para Configuração do WhatsApp (Se número não configurado) -->
+  <div id="config-modal" class="fixed inset-0 bg-brandNavy/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-panel p-8 rounded-2xl max-w-lg w-full border border-brandChampagne/30 text-center space-y-6">
+      <div class="w-12 h-12 rounded-full bg-brandRoyal/30 border border-brandChampagne/40 mx-auto flex items-center justify-center text-brandChampagne">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      
+      <h3 class="font-editorial text-2xl font-bold text-brandChampagne">Configuração de Pedido</h3>
+      
+      <p class="text-sm text-brandGrayBlue leading-relaxed">
+        Seu pedido foi formatado com sucesso! Para direcionamento direto no WhatsApp, configure a variável <code class="text-brandChampagne bg-brandNavy px-2 py-1 rounded">CONFIG.whatsappNumber</code> no topo do script JavaScript.
+      </p>
+
+      <div class="bg-brandNavy p-4 rounded-xl text-left border border-brandGrayBlue/20">
+        <p class="text-xs text-brandChampagne font-semibold mb-2">Prévia da mensagem gerada:</p>
+        <pre id="whatsapp-message-preview" class="text-xs text-brandOffWhite/80 whitespace-pre-wrap font-sans max-h-40 overflow-y-auto"></pre>
+      </div>
+
+      <div class="flex gap-4">
+        <button id="copy-message-btn" class="flex-1 py-3 bg-brandNavy border border-brandChampagne/40 text-brandChampagne hover:bg-brandRoyal/20 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
+          COPIAR TEXTO
+        </button>
+        <button id="close-config-modal-btn" class="flex-1 py-3 bg-brandRoyal text-brandOffWhite hover:bg-brandRoyal/80 rounded-full text-xs font-semibold uppercase tracking-wider transition-colors">
+          ENTENDIDO
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== SEÇÃO 08 — RODAPÉ ==================== -->
+  <footer class="bg-brandNavy border-t border-brandGrayBlue/20 text-brandGrayBlue text-sm pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-brandGrayBlue/10">
+        
+        <!-- Coluna 1: Logo & Sobre -->
+        <div class="md:col-span-5 space-y-4">
+          <a href="#" class="flex items-center gap-3">
+            <div class="w-8 h-8 border border-brandChampagne/40 rounded-full flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 25H75M20 50H65M20 75H80" stroke="#E8DDC8" stroke-width="8" stroke-linecap="round"/>
+                <path d="M20 25V75" stroke="#E8DDC8" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="font-editorial text-xl font-bold tracking-widest text-brandChampagne uppercase">EUROPA STORE</span>
+          </a>
+          <p class="text-xs text-brandGrayBlue leading-relaxed max-w-sm">
+            Moda masculina premium com essência europeia. Peças exclusivas, qualidade intransigente e preço justo para homens de estilo.
+          </p>
+          <div class="pt-2 text-xs text-brandChampagne font-medium flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Entregamos para todo o Brasil</span>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Links de Navegação -->
+        <div class="md:col-span-3 space-y-3">
+          <h5 class="text-xs font-bold text-brandChampagne uppercase tracking-widest">Navegação</h5>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#categorias" class="hover:text-brandOffWhite transition-colors">Coleções</a></li>
+            <li><a href="#camisetas-section" class="hover:text-brandOffWhite transition-colors">Camisetas Premium</a></li>
+            <li><a href="#shorts-section" class="hover:text-brandOffWhite transition-colors">Shorts Resort</a></li>
+            <li><a href="#bones-section" class="hover:text-brandOffWhite transition-colors">Bonés Exclusivos</a></li>
+            <li><a href="#sobre" class="hover:text-brandOffWhite transition-colors">Sobre a Europa Store</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Redes Sociais & Contato -->
+        <div class="md:col-span-4 space-y-3">
+          <h5 class="text-xs font-bold text-brandChampagne uppercase tracking-widest">Atendimento & Redes</h5>
+          <p class="text-xs">Atendimento personalizado e suporte a pedidos:</p>
+          
+          <div class="flex items-center gap-4 pt-2">
+            <!-- Link Instagram (configurável) -->
+            <a id="footer-instagram-link" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-brandChampagne/20 flex items-center justify-center hover:border-brandChampagne hover:text-brandChampagne transition-colors" aria-label="Instagram da Europa Store">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- Link WhatsApp (configurável) -->
+            <a id="footer-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-brandChampagne/20 flex items-center justify-center hover:border-brandChampagne hover:text-brandChampagne transition-colors" aria-label="WhatsApp da Europa Store">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Rodapé Direitos Reservados -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brandGrayBlue/70 gap-4">
+        <p>© 2025 Europa Store. Todos os direitos reservados. Seu estilo, nossa essência.</p>
+        <p>Desenvolvido com elegância sob medida.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==================== JAVASCRIPT VANILLA ==================== -->
+  <script>
+    /*
+    ====================================================================
+    EUROPA STORE — SISTEMA DE LOJA & CHECKOUT VANILLA JAVASCRIPT
+    ====================================================================
+    Este código centraliza os dados dos produtos e a lógica de interatividade.
+    Não utiliza bibliotecas externas ou frameworks.
+    */
+
+    /* === 1. CONFIGURAÇÕES CENTRAIS DE MARCA & CONTATO === */
+    const CONFIG = {
+      storeName: "Europa Store",
+      // Insira o número do WhatsApp com DDD e DDI para ativação automática (ex: "5511999999999")
+      whatsappNumber: "", 
+      instagramUrl: "https://instagram.com/europastore",
+      whatsappUrlBase: "https://wa.me/",
+      currencySymbol: "R$",
+    };
+
+
+    /* === 2. BANCO DE DADOS DOS PRODUTOS (PRODUCTS_DATA) ===
+       Dados estruturados e neutros prontos para inserção e atualização posterior.
+    */
+    const PRODUCTS_DATA = [
+      // ----- CAMISETAS -----
+      {
+        id: "cam-01",
+        nome: "Camiseta Supima Essential",
+        categoria: "camisetas",
+        descricao: "Algodão Supima nobre com toque extra macio e corte alfaiataria europeu.",
+        preco: 149.90,
+        imagem: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "cam-02",
+        nome: "Camiseta Linho & Algodão Milano",
+        categoria: "camisetas",
+        descricao: "Textura fluida e respirável em tom off-white perfeita para composições elegantes.",
+        preco: 189.90,
+        imagem: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "cam-03",
+        nome: "Camiseta Pima Tailored Navy",
+        categoria: "camisetas",
+        descricao: "Azul-marinho profundo com caimento estruturado e costuras imperceptíveis.",
+        preco: 169.90,
+        imagem: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=800&q=80",
+        disponivel: false // Demonstração do estado INDISPONÍVEL
+      },
+
+      // ----- SHORTS -----
+      {
+        id: "short-01",
+        nome: "Short Alfaiataria Resort",
+        categoria: "shorts",
+        descricao: "Corte estruturado em sarja leve com cós ajustável e ponteiras metálicas.",
+        preco: 199.90,
+        imagem: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "short-02",
+        nome: "Short Riviera Swim & Casual",
+        categoria: "shorts",
+        descricao: "Secagem ultrarrápida com acabamento acetinado e bolsos laterais embutidos.",
+        preco: 179.90,
+        imagem: "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "short-03",
+        nome: "Short Regular Fit Linen Blend",
+        categoria: "shorts",
+        descricao: "Mescla nobre de linho e algodão em tom bege champagne para dias ensolarados.",
+        preco: 219.90,
+        imagem: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+        disponivel: false // Demonstração do estado INDISPONÍVEL
+      },
+
+      // ----- BONÉS -----
+      {
+        id: "bone-01",
+        nome: "Boné Minimalist Monogram Navy",
+        categoria: "bones",
+        descricao: "Sarja pesada em azul-marinho profundo com fivela escovada e bordado sutil.",
+        preco: 129.90,
+        imagem: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "bone-02",
+        nome: "Boné Linen Structure Off-White",
+        categoria: "bones",
+        descricao: "Linho puro estruturado de copa média com aba pré-curvada elegante.",
+        preco: 139.90,
+        imagem: "https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?auto=format&fit=crop&w=800&q=80",
+        disponivel: true
+      },
+      {
+        id: "bone-03",
+        nome: "Boné Heritage Champagne Edition",
+        categoria: "bones",
+        descricao: "Edição especial em tom champagne com acabamento interno aveludado.",
+        preco: 149.90,
+        imagem: "https://images.unsplash.com/photo-1534215754734-18e55d13e346?auto=format&fit=crop&w=800&q=80",
+        disponivel: false // Demonstração do estado INDISPONÍVEL
+      }
+    ];
+
+
+    /* === 3. ESTADO DO CARRINHO (CART STATE) === */
+    let cartState = [];
+
+
+    /* === 4. INICIALIZAÇÃO DA APLICAÇÃO === */
+    document.addEventListener("DOMContentLoaded", () => {
+      initApp();
+    });
+
+    function initApp() {
+      renderShowcase();
+      setupEventListeners();
+      setupScrollObserver();
+      updateSocialLinks();
+    }
+
+
+    /* === 5. FORMATAÇÃO MONETÁRIA (BRL) === */
+    function formatCurrency(amount) {
+      return new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      }).format(amount);
+    }
+
+
+    /* === 6. RENDERIZAÇÃO DA VITRINE DE PRODUTOS === */
+    function renderShowcase() {
+      const containerCamisetas = document.getElementById("container-camisetas");
+      const containerShorts = document.getElementById("container-shorts");
+      const containerBones = document.getElementById("container-bones");
+
+      if (!containerCamisetas || !containerShorts || !containerBones) return;
+
+      containerCamisetas.innerHTML = "";
+      containerShorts.innerHTML = "";
+      containerBones.innerHTML = "";
+
+      PRODUCTS_DATA.forEach(product => {
+        const cardHtml = createProductCardHtml(product);
+        if (product.categoria === "camisetas") {
+          containerCamisetas.insertAdjacentHTML("beforeend", cardHtml);
+        } else if (product.categoria === "shorts") {
+          containerShorts.insertAdjacentHTML("beforeend", cardHtml);
+        } else if (product.categoria === "bones") {
+          containerBones.insertAdjacentHTML("beforeend", cardHtml);
+        }
+      });
+    }
+
+    function createProductCardHtml(product) {
+      const isAvailable = product.disponivel;
+      
+      return `
+        <article id="card-${product.id}" class="glass-panel rounded-xl overflow-hidden flex flex-col card-hover border border-brandChampagne/10 relative group">
+          
+          <!-- Imagem e Badge de Disponibilidade -->
+          <div class="aspect-[4/4] w-full overflow-hidden bg-brandNavy relative">
+            <img src="${product.imagem}" 
+                 alt="${escapeHtml(product.nome)}" 
+                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ${!isAvailable ? 'grayscale opacity-60' : ''}"
+                 loading="lazy">
+            
+            <!-- Badge Discreto de Status -->
+            <div class="absolute top-3 right-3">
+              ${isAvailable ? `
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brandNavy/80 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> DISPONÍVEL
+                </span>
+              ` : `
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-brandNavy/90 text-brandGrayBlue border border-brandGrayBlue/30 backdrop-blur-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-brandGrayBlue"></span> INDISPONÍVEL
+                </span>
+              `}
+            </div>
+          </div>
+
+          <!-- Conteúdo do Card -->
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="text-[10px] tracking-widest font-semibold text-brandGrayBlue uppercase">${product.categoria}</span>
+              <h4 class="font-editorial text-xl font-bold text-brandOffWhite mt-1 group-hover:text-brandChampagne transition-colors">
+                ${escapeHtml(product.nome)}
+              </h4>
+              <p class="text-xs text-brandGrayBlue mt-2 leading-relaxed line-clamp-2">
+                ${escapeHtml(product.descricao)}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-brandGrayBlue/10 flex items-center justify-between">
+              <div>
+                <span class="text-[10px] text-brandGrayBlue uppercase tracking-wider block">VALOR</span>
+                <span class="font-editorial text-2xl font-bold text-brandChampagne">${formatCurrency(product.preco)}</span>
+              </div>
+
+              <!-- Botão Adicionar ao Pedido -->
+              ${isAvailable ? `
+                <button onclick="addToCart('${product.id}')" 
+                        class="px-4 py-2.5 bg-brandRoyal hover:bg-brandRoyal/80 text-brandOffWhite rounded-full text-xs font-semibold tracking-wider uppercase transition-all flex items-center gap-2 border border-brandChampagne/20 hover:border-brandChampagne focus:outline-none shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brandChampagne" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                  </svg>
+                  <span>ADICIONAR</span>
+                </button>
+              ` : `
+                <button disabled 
+                        class="px-4 py-2.5 bg-brandNavyLight text-brandGrayBlue/50 rounded-full text-xs font-semibold tracking-wider uppercase border border-brandGrayBlue/10 cursor-not-allowed">
+                  ESGOTADO
+                </button>
+              `}
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    // Utilitário de segurança contra XSS
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+
+    /* === 7. ENGINE DO CARRINHO DE COMPRAS === */
+    function addToCart(productId) {
+      const product = PRODUCTS_DATA.find(p => p.id === productId);
+      if (!product || !product.disponivel) return;
+
+      const existingItem = cartState.find(item => item.id === productId);
+
+      if (existingItem) {
+        existingItem.quantidade += 1;
+      } else {
+        cartState.push({
+          id: product.id,
+          nome: product.nome,
+          preco: product.preco,
+          imagem: product.imagem,
+          quantidade: 1
+        });
+      }
+
+      // Animação visual no card do produto
+      const cardEl = document.getElementById(`card-${productId}`);
+      if (cardEl) {
+        cardEl.classList.add('added-pulse');
+        setTimeout(() => cardEl.classList.remove('added-pulse'), 600);
+      }
+
+      updateCartUi();
+      openCartDrawer();
+    }
+
+    function updateQuantity(productId, delta) {
+      const item = cartState.find(i => i.id === productId);
+      if (!item) return;
+
+      item.quantidade += delta;
+      if (item.quantidade <= 0) {
+        removeFromCart(productId);
+        return;
+      }
+
+      updateCartUi();
+    }
+
+    function removeFromCart(productId) {
+      cartState = cartState.filter(item => item.id !== productId);
+      updateCartUi();
+    }
+
+    function updateCartUi() {
+      const container = document.getElementById("cart-items-container");
+      const counterEl = document.getElementById("cart-counter");
+      const floatingCounterEl = document.getElementById("floating-cart-counter");
+      const subtotalEl = document.getElementById("cart-subtotal-text");
+      const totalEl = document.getElementById("cart-total-text");
+
+      const totalItems = cartState.reduce((sum, i) => sum + i.quantidade, 0);
+      const totalValue = cartState.reduce((sum, i) => sum + (i.preco * i.quantidade), 0);
+
+      // Atualiza contadores
+      if (counterEl) counterEl.textContent = totalItems;
+      if (floatingCounterEl) floatingCounterEl.textContent = totalItems;
+      if (subtotalEl) subtotalEl.textContent = formatCurrency(totalValue);
+      if (totalEl) totalEl.textContent = formatCurrency(totalValue);
+
+      // Atualiza Lista HTML no Drawer
+      if (!container) return;
+
+      if (cartState.length === 0) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center p-8 space-y-4 my-auto">
+            <div class="w-16 h-16 rounded-full bg-brandNavy border border-brandChampagne/20 flex items-center justify-center text-brandGrayBlue">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <p class="font-editorial text-2xl font-semibold text-brandChampagne">Seu pedido está vazio</p>
+            <p class="text-xs text-brandGrayBlue max-w-xs">Explore nossas coleções e selecione suas peças preferidas para finalizar pelo WhatsApp.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cartState.map(item => `
+        <div class="py-4 flex gap-4 items-center">
+          <img src="${item.imagem}" alt="${escapeHtml(item.nome)}" class="w-16 h-16 object-cover rounded-lg border border-brandChampagne/20 bg-brandNavy">
+          
+          <div class="flex-1 min-w-0">
+            <h5 class="font-editorial text-lg font-bold text-brandOffWhite truncate">${escapeHtml(item.nome)}</h5>
+            <p class="text-xs text-brandChampagne font-semibold">${formatCurrency(item.preco)}</p>
+            <p class="text-[10px] text-brandGrayBlue mt-0.5">Subtotal: ${formatCurrency(item.preco * item.quantidade)}</p>
+          </div>
+
+          <!-- Controles de Quantidade -->
+          <div class="flex items-center gap-2 bg-brandNavy border border-brandChampagne/20 rounded-full px-2 py-1">
+            <button onclick="updateQuantity('${item.id}', -1)" class="w-6 h-6 rounded-full text-brandChampagne hover:bg-brandRoyal/40 flex items-center justify-center text-xs font-bold transition-colors">
+              -
+            </button>
+            <span class="text-xs font-semibold text-brandOffWhite px-1">${item.quantidade}</span>
+            <button onclick="updateQuantity('${item.id}', 1)" class="w-6 h-6 rounded-full text-brandChampagne hover:bg-brandRoyal/40 flex items-center justify-center text-xs font-bold transition-colors">
+              +
+            </button>
+          </div>
+
+          <!-- Remover -->
+          <button onclick="removeFromCart('${item.id}')" class="text-brandGrayBlue hover:text-rose-400 p-1 transition-colors" title="Remover item">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+
+    /* === 8. GERAÇÃO DA MENSAGEM DO WHATSAPP === */
+    function generateWhatsAppMessage() {
+      if (cartState.length === 0) return null;
+
+      let msg = `Olá! Vim pelo site da Europa Store e gostaria de realizar o seguinte pedido:\n\n`;
+      msg += `*MEU PEDIDO*\n\n`;
+
+      let total = 0;
+
+      cartState.forEach((item, index) => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        
+        msg += `${index + 1}. *${item.nome}*\n`;
+        msg += `    Quantidade: ${item.quantidade}\n`;
+        msg += `    Valor unitário: ${formatCurrency(item.preco)}\n`;
+        msg += `    Subtotal: ${formatCurrency(subtotal)}\n\n`;
+      });
+
+      msg += `*TOTAL: ${formatCurrency(total)}*\n\n`;
+      msg += `Gostaria de confirmar a disponibilidade e finalizar minha compra!`;
+
+      return msg;
+    }
+
+    function handleCheckoutWhatsApp() {
+      if (cartState.length === 0) {
+        showToast("Seu pedido está vazio! Adicione produtos antes de finalizar.");
+        return;
+      }
+
+      const rawMsg = generateWhatsAppMessage();
+      if (!rawMsg) return;
+
+      const encodedMsg = encodeURIComponent(rawMsg);
+
+      // Verifica se o número do WhatsApp foi configurado na variável centralizada
+      if (CONFIG.whatsappNumber && CONFIG.whatsappNumber.trim() !== "") {
+        const targetUrl = `${CONFIG.whatsappUrlBase}${CONFIG.whatsappNumber.trim()}?text=${encodedMsg}`;
+        window.open(targetUrl, "_blank");
+      } else {
+        // Exibe modal com a prévia da mensagem caso o número ainda não esteja preenchido no código
+        const modal = document.getElementById("config-modal");
+        const previewEl = document.getElementById("whatsapp-message-preview");
+        if (previewEl) previewEl.textContent = rawMsg;
+        if (modal) modal.classList.remove("hidden");
+      }
+    }
+
+
+    /* === 9. GERENCIAMENTO DE INTERAÇÃO & DRAWER === */
+    function openCartDrawer() {
+      const drawer = document.getElementById("cart-drawer");
+      const backdrop = document.getElementById("cart-backdrop");
+      if (drawer && backdrop) {
+        backdrop.classList.remove("pointer-events-none", "opacity-0");
+        drawer.classList.remove("translate-x-full");
+      }
+    }
+
+    function closeCartDrawer() {
+      const drawer = document.getElementById("cart-drawer");
+      const backdrop = document.getElementById("cart-backdrop");
+      if (drawer && backdrop) {
+        backdrop.classList.add("opacity-0", "pointer-events-none");
+        drawer.classList.add("translate-x-full");
+      }
+    }
+
+    function setupEventListeners() {
+      // Toggle Carrinho
+      document.getElementById("open-cart-btn")?.addEventListener("click", openCartDrawer);
+      document.getElementById("floating-cart-btn")?.addEventListener("click", openCartDrawer);
+      document.getElementById("close-cart-btn")?.addEventListener("click", closeCartDrawer);
+      document.getElementById("cart-backdrop")?.addEventListener("click", closeCartDrawer);
+
+      // Finalização pelo WhatsApp
+      document.getElementById("checkout-whatsapp-btn")?.addEventListener("click", handleCheckoutWhatsApp);
+
+      // Modal Configuração WhatsApp
+      document.getElementById("close-config-modal-btn")?.addEventListener("click", () => {
+        document.getElementById("config-modal")?.classList.add("hidden");
+      });
+
+      document.getElementById("copy-message-btn")?.addEventListener("click", () => {
+        const rawMsg = generateWhatsAppMessage();
+        if (rawMsg) {
+          navigator.clipboard.writeText(rawMsg).then(() => {
+            showToast("Mensagem copiada para a área de transferência!");
+          }).catch(() => {
+            // Fallback para document.execCommand('copy') devido a restrições de iFrame
+            const textarea = document.createElement("textarea");
+            textarea.value = rawMsg;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            showToast("Mensagem copiada com sucesso!");
+          });
+        }
+      });
+
+      // Menu Mobile Toggle
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOpenIcon = document.getElementById("menu-icon-open");
+      const menuCloseIcon = document.getElementById("menu-icon-close");
+
+      menuBtn?.addEventListener("click", () => {
+        const isHidden = mobileMenu?.classList.contains("hidden");
+        if (isHidden) {
+          mobileMenu?.classList.remove("hidden");
+          menuOpenIcon?.classList.add("hidden");
+          menuCloseIcon?.classList.remove("hidden");
+        } else {
+          mobileMenu?.classList.add("hidden");
+          menuOpenIcon?.classList.remove("hidden");
+          menuCloseIcon?.classList.add("hidden");
+        }
+      });
+
+      // Fechar menu mobile ao clicar em links
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu?.classList.add("hidden");
+          menuOpenIcon?.classList.remove("hidden");
+          menuCloseIcon?.classList.add("hidden");
+        });
+      });
+
+      // Filtro de Categorias na Vitrine
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const filter = e.target.getAttribute("data-filter");
+          
+          document.querySelectorAll(".filter-btn").forEach(b => {
+            b.classList.remove("bg-brandRoyal", "text-brandChampagne", "border-brandChampagne/40");
+            b.classList.add("bg-brandNavy", "text-brandGrayBlue", "border-brandChampagne/10");
+          });
+
+          e.target.classList.remove("bg-brandNavy", "text-brandGrayBlue", "border-brandChampagne/10");
+          e.target.classList.add("bg-brandRoyal", "text-brandChampagne", "border-brandChampagne/40");
+
+          document.querySelectorAll(".showcase-group").forEach(group => {
+            if (filter === "all") {
+              group.style.display = "block";
+            } else {
+              if (group.id.includes(filter)) {
+                group.style.display = "block";
+              } else {
+                group.style.display = "none";
+              }
+            }
+          });
+        });
+      });
+    }
+
+    /* === 10. OBSERVER DE ANIMAÇÕES NO SCROLL (INTERSECTION OBSERVER) === */
+    function setupScrollObserver() {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+    }
+
+    /* === 11. ATUALIZAÇÃO DE LINKS CONFIGURÁVEIS DO RODAPÉ === */
+    function updateSocialLinks() {
+      const instaLink = document.getElementById("footer-instagram-link");
+      const whatsLink = document.getElementById("footer-whatsapp-link");
+
+      if (instaLink) instaLink.href = CONFIG.instagramUrl;
+      if (whatsLink) {
+        whatsLink.href = CONFIG.whatsappNumber 
+          ? `${CONFIG.whatsappUrlBase}${CONFIG.whatsappNumber}`
+          : "#";
+      }
+    }
+
+    /* === 12. SISTEMA DE TOAST DE NOTIFICAÇÃO SEM ALERT() === */
+    function showToast(message) {
+      const existingToast = document.getElementById("custom-toast");
+      if (existingToast) existingToast.remove();
+
+      const toast = document.createElement("div");
+      toast.id = "custom-toast";
+      toast.className = "fixed bottom-8 left-1/2 -translate-x-1/2 z-50 glass-panel px-6 py-3 rounded-full text-xs font-semibold text-brandChampagne border border-brandChampagne/40 shadow-2xl flex items-center gap-2 animate-bounce";
+      toast.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-brandChampagne"></span>
+        <span>${escapeHtml(message)}</span>
+      `;
+
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
